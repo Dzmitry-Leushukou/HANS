@@ -11,10 +11,9 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,9 +22,11 @@ class Ui_PlayMenu
 {
 public:
     QWidget *centralwidget;
-    QPushButton *pushButton;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QGridLayout *gridLayout;
+    QPushButton *BackButton;
+    QPushButton *ContinueButton;
+    QPushButton *SavedButton;
+    QPushButton *NewGameButton;
 
     void setupUi(QMainWindow *PlayMenu)
     {
@@ -34,17 +35,29 @@ public:
         PlayMenu->resize(800, 600);
         centralwidget = new QWidget(PlayMenu);
         centralwidget->setObjectName("centralwidget");
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(410, 170, 83, 29));
+        gridLayout = new QGridLayout(centralwidget);
+        gridLayout->setObjectName("gridLayout");
+        BackButton = new QPushButton(centralwidget);
+        BackButton->setObjectName("BackButton");
+
+        gridLayout->addWidget(BackButton, 3, 0, 1, 1);
+
+        ContinueButton = new QPushButton(centralwidget);
+        ContinueButton->setObjectName("ContinueButton");
+
+        gridLayout->addWidget(ContinueButton, 0, 0, 1, 1);
+
+        SavedButton = new QPushButton(centralwidget);
+        SavedButton->setObjectName("SavedButton");
+
+        gridLayout->addWidget(SavedButton, 2, 0, 1, 1);
+
+        NewGameButton = new QPushButton(centralwidget);
+        NewGameButton->setObjectName("NewGameButton");
+
+        gridLayout->addWidget(NewGameButton, 1, 0, 1, 1);
+
         PlayMenu->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(PlayMenu);
-        menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 25));
-        PlayMenu->setMenuBar(menubar);
-        statusbar = new QStatusBar(PlayMenu);
-        statusbar->setObjectName("statusbar");
-        PlayMenu->setStatusBar(statusbar);
 
         retranslateUi(PlayMenu);
 
@@ -54,7 +67,10 @@ public:
     void retranslateUi(QMainWindow *PlayMenu)
     {
         PlayMenu->setWindowTitle(QCoreApplication::translate("PlayMenu", "MainWindow", nullptr));
-        pushButton->setText(QCoreApplication::translate("PlayMenu", "PushButton", nullptr));
+        BackButton->setText(QCoreApplication::translate("PlayMenu", "Back", nullptr));
+        ContinueButton->setText(QCoreApplication::translate("PlayMenu", "Continue Game", nullptr));
+        SavedButton->setText(QCoreApplication::translate("PlayMenu", "Saved Games", nullptr));
+        NewGameButton->setText(QCoreApplication::translate("PlayMenu", "New Game", nullptr));
     } // retranslateUi
 
 };

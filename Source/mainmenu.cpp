@@ -36,7 +36,7 @@ void MainWindow::on_SettingsButton_clicked()
 void MainWindow::on_PlayButton_clicked()
 {
     play_menu=new PlayMenu();
-    connect(play_menu, &PlayMenu::showMainMenu, this, &MainWindow::showMainMenu);
+    connect(play_menu, &PlayMenu::Back, this, &MainWindow::showMainMenu);
     play_menu->show();
     this->hide();
 

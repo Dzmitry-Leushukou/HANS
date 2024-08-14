@@ -16,10 +16,11 @@ public:
     ~PlayMenu();
 
 signals:
-    void showMainMenu();
+    void Back();
 
 private slots:
-    void on_pushButton_clicked();
+
+    void on_BackButton_clicked();
 
 private:
     Ui::PlayMenu *ui;

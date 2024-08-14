@@ -13,8 +13,9 @@ PlayMenu::~PlayMenu()
     delete ui;
 }
 
-void PlayMenu::on_pushButton_clicked()
+
+void PlayMenu::on_BackButton_clicked()
 {
-    emit showMainMenu();
+    emit Back();
 }
 

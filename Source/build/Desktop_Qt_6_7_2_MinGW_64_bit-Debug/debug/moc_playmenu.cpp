@@ -36,9 +36,9 @@ namespace {
 struct qt_meta_stringdata_CLASSPlayMenuENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSPlayMenuENDCLASS = QtMocHelpers::stringData(
     "PlayMenu",
-    "showMainMenu",
+    "Back",
     "",
-    "on_pushButton_clicked"
+    "on_BackButton_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -82,9 +82,9 @@ Q_CONSTINIT const QMetaObject PlayMenu::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSPlayMenuENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<PlayMenu, std::true_type>,
-        // method 'showMainMenu'
+        // method 'Back'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_clicked'
+        // method 'on_BackButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -96,15 +96,15 @@ void PlayMenu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         auto *_t = static_cast<PlayMenu *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->showMainMenu(); break;
-        case 1: _t->on_pushButton_clicked(); break;
+        case 0: _t->Back(); break;
+        case 1: _t->on_BackButton_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
             using _t = void (PlayMenu::*)();
-            if (_t _q_method = &PlayMenu::showMainMenu; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &PlayMenu::Back; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
@@ -144,7 +144,7 @@ int PlayMenu::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void PlayMenu::showMainMenu()
+void PlayMenu::Back()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
