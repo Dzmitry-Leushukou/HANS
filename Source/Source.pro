@@ -18,7 +18,8 @@ HEADERS += \
     playmenu.h
 
 FORMS += \
-    mainmenu.ui
+    mainmenu.ui \
+    playmenu.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

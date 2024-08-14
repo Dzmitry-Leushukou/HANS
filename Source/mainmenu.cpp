@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(play_menu, &PlayMenu::showMainWindow, this, &MainWindow::showMainMenu);
+
 }
 
 MainWindow::~MainWindow()
@@ -36,5 +36,9 @@ void MainWindow::on_SettingsButton_clicked()
 void MainWindow::on_PlayButton_clicked()
 {
     play_menu=new PlayMenu();
+    connect(play_menu, &PlayMenu::showMainMenu, this, &MainWindow::showMainMenu);
+    play_menu->show();
+    this->hide();
+
 }
 
