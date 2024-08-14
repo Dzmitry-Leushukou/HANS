@@ -10,10 +10,12 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    mainmenu.cpp
+    mainmenu.cpp \
+    playmenu.cpp
 
 HEADERS += \
-    mainmenu.h
+    mainmenu.h \
+    playmenu.h
 
 FORMS += \
     mainmenu.ui
@@ -22,3 +24,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Resources.qrc
